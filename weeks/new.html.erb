@@ -1,0 +1,27 @@
+<h1>New Week</h1>
+
+<%= form_tag(weeks_url, method: 'post') do %>
+  <div>
+    <%= label_tag :number %><br />
+    <%= number_field_tag :number %>
+  </div>
+
+  <div>
+    <%= label_tag :title %><br />
+    <%= text_field_tag :title %>
+  </div>
+
+  <div>
+    <%= label_tag :subtitle %><br />
+    <%= text_field_tag :subtitle %>
+  </div>
+
+  <div>
+    <%= label_tag :repo_url %><br />
+    <%= text_field_tag :repo_url %>
+  </div>
+
+  <div>
+    <%= submit_tag "Create Week" %>
+  </div>
+<% end %>

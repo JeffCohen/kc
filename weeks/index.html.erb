@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-3">
+    <ul class="list-group">
+      <% @weeks.each do |week| %>
+        <%= link_to '#', class: 'list-group-item' do %>
+          <h4>Week <%= week.number %>
+            <small><%= week.title %></small>
+          </h4>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <blockquote class="pull-right">
+      <p><em>Make the Invisible Visible.</em></p>
+    </blockquote>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="page-header">
+          <h1>Week 3
+            <small>The Ruby Language</small>
+          </h1>
+        </div>
+        <ul class="nav nav-pills">
+          <li class="active"><a href="#">Summary</a></li>
+          <li><a href="#">Watch Video</a></li>
+          <li><a href="#">Homework</a></li>
+        </ul>
+
+        <article>
+          <h3>Expressions</h3>
+          <p>Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.</p>
+
+          <p>Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.</p>
+
+          <h3>Variables</h3>
+          <p>Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.Try to use irb to evaulate expressions.</p>
+
+        </article>
+      </div>
+    </div>
+  </div>
+</div>

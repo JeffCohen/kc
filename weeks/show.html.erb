@@ -1,0 +1,83 @@
+<div class="col-md-12">
+
+  <% if logged_in? %>
+    <%= link_to "Sign Out", signout_url, class: 'btn btn-large btn-danger pull-right' %>
+  <% end %>
+
+  <!-- <div class="page-header"> -->
+    <h1>Week <%= @week.number %>
+      <small><%= @week.title %></small>
+    </h1>
+    <hr>
+  <!-- </div> -->
+
+  <ul class="nav nav-pills">
+    <% if week_has_summary? %>
+    <li <%= 'class="active"' unless params[:show_visuals] %>>
+      <%= link_to '#summary', data: { toggle: 'tab' } do %>
+        <i class="fa fa-check-square-o fa-lg fa-fw"></i> Summary
+      <% end %>
+    </li>
+    <% end %>
+
+    <% if week_has_reading? %>
+    <li>
+      <%= link_to '#reading', data: { toggle: 'tab' } do %>
+        <i class="fa fa-bookmark fa-lg fa-fw"></i> Reading
+      <% end %>
+    </li>
+    <% end %>
+
+    <% if week_has_homework? %>
+    <li><%= link_to '#homework', data: { toggle: 'tab' } do %>
+        <i class="fa fa-wrench fa-lg fa-fw"></i> Homework
+      <% end %>
+    </li>
+    <% end %>
+
+    <% if week_has_visuals? %>
+    <li <%= 'class="active"' if params[:show_visuals] %>>
+      <%= link_to '#video', data: { toggle: 'tab' } do %>
+        <i class="fa fa-film fa-lg fa-fw"></i> Video
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+
+  <div id="mytabcontent" class="tab-content">
+    <% if week_has_summary? %>
+    <div class="tab-pane  <%= params[:show_visuals] ? '' : 'in active' %>" id="summary">
+      <article>
+        <%= summary_for(@week) %>
+      </article>
+    </div>
+    <% end %>
+
+    <% if week_has_reading? %>
+    <div class="tab-pane " id="reading">
+      <article>
+        <%= reading_for(@week) %>
+      </article>
+    </div>
+    <% end %>
+
+    <% if week_has_homework? %>
+    <div class="tab-pane " id="homework">
+      <article>
+        <%= homework_for(@week) %>
+      </article>
+    </div>
+    <% end %>
+
+    <% if week_has_visuals? %>
+    <div class="tab-pane  <%= params[:show_visuals] ? 'in active' : '' %>" id="video">
+      <article>
+        <% guard_with_github_login do %>
+          <%= slides_for(@week) %>
+          <%= videos_for(@week) %>
+        <% end %>
+      </article>
+    </div>
+    <% end %>
+  </div>
+</div>
